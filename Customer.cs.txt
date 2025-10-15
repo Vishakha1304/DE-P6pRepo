@@ -1,0 +1,45 @@
+sing System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Day3.demo1
+{
+    internal class Customer
+    {
+        int CustomerId;
+        string CustomerName;
+        long PhoneNumber;
+        List<Customer> CustomerList;
+
+        public void StoreDetails()
+        {
+          //  CustomerList = new List<Customer>();
+
+
+            Customer c1 = new Customer() {CustomerId=101, CustomerName="John",PhoneNumber=909090999};
+            //c1.CustomerId = 101;
+            //c1.CustomerName = "John";
+            //c1.PhoneNumber = 909090909;
+
+            Customer c2 = new Customer() { CustomerId = 102 ,CustomerName = "Joeyy", PhoneNumber = 9000000009 }; ;
+            // c2.CustomerId = 102;
+            //c2.CustomerName = "Joeyy";
+            //c2.PhoneNumber = 9000000909;
+
+            //  CustomerList.Add(c1);
+            //CustomerList.Add(c2);
+            CustomerList = new List<Customer>() { c1, c2 };
+
+            // CustomerList.Add(10110); //compile time type checking 
+        }
+        public void PrintCustomers()
+        {
+            foreach (var item in CustomerList)
+            {
+                Console.WriteLine("{0} {1} {2}", item.CustomerId, item.CustomerName, item.PhoneNumber);
+            }
+        }
+    }
+}
